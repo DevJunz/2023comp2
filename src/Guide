@@ -1,0 +1,26 @@
+구현할 기능 목록
+#Data
+-UserInfo : 유저 정보를 담고있는 부분
+-UserCalendar : 유저들의 일정 정보를 가지고 있는 부분
+
+#View
+-CalendarFrame : 기본 CalendarFrame 
+-MakeIdFrame : 회원가입을 진행하는 Frame
+-AddScheduleFrame : 스케쥴을 추가할 떄 나타나는 Frame
+
+
+#Model
+-CalanderMaker : CalendarFrame을 Calendar로부터 정보를 받아서 gui를 구현
+-Schedule : 만들어진 CalendarFrame의 정보에 일정을 추가하고 삭제하는 부분 UserCalendar와 소통
+-DataBus : UserCalendar에 있는 정보를 txt파일로 저장
+-main : mvc를 종합
+
+1.Start에서 CalendarMaker객체 생성
+2. CalendarMaker는 CalendarFrame(Localdate.now)이 기존의 메모장 파일을 가져다가 수정하기 
+DatePanel 연 월 정보
+6행 7열의 CalendarPanel 필요 -> 입력받은 Localdate정보를 가지고 button 생성후 넣기 
+어떠한 클릭 발생시 그 일정의 textfiled에 접근 가능
+버튼정보 textfield1개
+내가 추가하는 정보 textfield1개
+3.textfield에 정보가 추가되면 새로운 일정이 되어서 data에 저장 
+4. data에 저장되면 databus를 통해 입력 값 저장 
