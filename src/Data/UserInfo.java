@@ -2,8 +2,10 @@ package Data;
 
 
 public class UserInfo {
-	String st;
-	public UserInfo() {
-		
-	}
+	
+	public String StringData;
+	public int Year;
+	public int Month;
+	public int Day;
+	
 }
