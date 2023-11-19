@@ -1,11 +1,21 @@
 package Start;
 
-import Model.CalendarMaker;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import View.MainCalendar;
 
 public class Start {
 
 	public static void main(String[] args) {
-		CalendarMaker m = new CalendarMaker();
+		 SwingUtilities.invokeLater(() -> {
+	            try {
+	                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	            new MainCalendar();
+	        });
 
 	}
 
