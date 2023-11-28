@@ -15,7 +15,7 @@ public class AddEventFrame extends JFrame {
 		setTitle(b.DayInfo.Year+"년 "+b.DayInfo.Month+"월"+b.DayInfo.Day+"일");
 		setLayout(new GridLayout(3,0));
 		ta = new JTextArea(20,20);
-		ta.setFont(new Font("Serif", Font.BOLD, 18));
+		ta.setFont(new Font("Serif", Font.BOLD, 13));
 		tf = new JTextField(30);
 		ta.setText(s);
 		
