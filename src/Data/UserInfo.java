@@ -1,9 +1,10 @@
 package Data;
 
-
 public class UserInfo {
-	String st;
-	public UserInfo() {
-		
-	}
+	
+	public String StringData, Title;
+	public int Year;
+	public int Month;
+	public int Day;
+	
 }
