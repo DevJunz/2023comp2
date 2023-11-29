@@ -1,6 +1,5 @@
 package Data;
 
-
 public class UserInfo {
 	
 	public String StringData, Title;

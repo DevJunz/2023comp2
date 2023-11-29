@@ -1,7 +1,6 @@
 package Start;
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 import View.MainCalendar;
 

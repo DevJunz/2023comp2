@@ -1,14 +1,8 @@
 package View;
 
-import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.io.*;
-import java.io.IOException;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class AddEventFrame extends JFrame {
 	private JTextArea ta;
@@ -21,6 +15,8 @@ public class AddEventFrame extends JFrame {
 		setTitle(b.DayInfo.Year+"년 "+b.DayInfo.Month+"월"+b.DayInfo.Day+"일");
 		setLayout(new GridLayout(3,0));
 		ta = new JTextArea(20,20);
+		ta.setEditable(false);//변경 불가
+		ta.setFont(new Font("Serif", Font.BOLD, 18));
 		tf = new JTextField(30);
 		ta.setText(s);
 		
@@ -35,8 +31,9 @@ public class AddEventFrame extends JFrame {
 		}
 		if(lineCount!=0) {
 			b.title.setText(lineCount+"");
-			b.setBackground(Color.PINK);
 			b.setBorderPainted(false);
+			b.setBackground(Color.PINK);
+			
 		}
 		
 		setSize(400,300);
@@ -46,7 +43,7 @@ public class AddEventFrame extends JFrame {
 		
 		addbutton.addActionListener(e ->{
 			String text =tf.getText();
-			ta.append ("-"+text + "\n"); 
+			ta.append ("- " + text + "\n"); 
 			tf.selectAll();
 			b.DayInfo.StringData = ta.getText();
 			
@@ -58,8 +55,8 @@ public class AddEventFrame extends JFrame {
 			}
 			if(lineCount1!=0) {
 				b.title.setText(lineCount1+"");
-				b.setBackground(Color.PINK);
 				b.setBorderPainted(false);
+				b.setBackground(Color.PINK);
 			}
 			
 			try {

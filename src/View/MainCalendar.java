@@ -1,21 +1,12 @@
 package View;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.DateFormatSymbols;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.stream.IntStream;
 
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.nio.file.*;
+import java.text.*;
+import java.util.*;
+import java.util.stream.*;
 import javax.swing.*;
 
 import Data.UserInfo;
@@ -52,8 +43,13 @@ public class MainCalendar extends JFrame {
         	MonthComboBox.setSelectedIndex((selectedMonth == 11 ? 0 : selectedMonth+1));
         });
         
+        JButton allSchedule = new JButton("All Schedule");
+        //모든 스케줄 출력하는 새 프레임 생성
+        allSchedule.addActionListener(e -> { new AllScheduleFrame(); }); 
+        
         JLabel  Month_Seclect = new JLabel("Select Month:");
         ControlPanel = new JPanel();
+        ControlPanel.add(allSchedule);
         ControlPanel.add(PreviousButton);
         ControlPanel.add(Month_Seclect);
         ControlPanel.add(MonthComboBox);
@@ -120,7 +116,6 @@ public class MainCalendar extends JFrame {
         	String filePath = "src/Data/Database/"+2024+"_"+(m+1)+"_"+i+".txt";
         	File file = new File(filePath);
         	if(file.exists()) {
-        		System.out.println("파일존재"+i);
         		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
         			String dataline="";
         			String line;
